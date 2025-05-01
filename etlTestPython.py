@@ -20,7 +20,10 @@ merged_df= pd.merge(landing_df, dal_df, how='left', left_on='landing_id', right_
 print(merged_df)
 
 assert merged_df['emp_name_landing'].equals(merged_df['emp_name_dal']), "Data mismatch found!"
-print("Data validation successful!")
+print("Employee validation successful!")
+
+assert merged_df['salary_landing'].equals(merged_df['salary_dal']), "Salary mismatch found!"
+print("Salary validation successful!")
 
 conn.close()
 
